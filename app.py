@@ -7,16 +7,16 @@ app = Flask(__name__)
 #  Se reinicia cada vez que reinicias Flask
 # ──────────────────────────────────────────
 productos = [
-    {"id": 1, "nombre": "Cuaderno",   "cantidad": 50, "precio": 1.20, "Marca": "Norma"},
-    {"id": 2, "nombre": "Lapiz",     "cantidad": 30, "precio": 0.80, "Marca": "Faber-Castell"},
-    {"id": 3, "nombre": "Esfero",   "cantidad": 20, "precio": 0.90, "Marca": "Bic"},
-    {"id": 4, "nombre": "Borrador",   "cantidad": 20, "precio": 0.90, "Marca": "pelikan"},
-    {"id": 5, "nombre": "Sacapuntas",   "cantidad": 20, "precio": 0.90, "Marca": "Maped"},
-    {"id": 6, "nombre": "Colores",   "cantidad": 20, "precio": 0.90, "Marca": "Crayola"},
-    {"id": 7, "nombre": "Regla",   "cantidad": 20, "precio": 0.90, "Marca": "Staedler"},
-    {"id": 8, "nombre": "Pegante",   "cantidad": 20, "precio": 0.90, "Marca": "Colbón"},
+    {"id": 1, "nombre": "Cuaderno",   "cantidad": 50, "precio": 1.20, "marca": "Norma"},
+    {"id": 2, "nombre": "Lapiz",     "cantidad": 30, "precio": 0.80, "marca": "Faber-Castell"},
+    {"id": 3, "nombre": "Esfero",   "cantidad": 20, "precio": 1.20, "marca": "Bic"},
+    {"id": 4, "nombre": "Borrador",   "cantidad": 20, "precio": 0.50, "marca": "pelikan"},
+    {"id": 5, "nombre": "Sacapuntas",   "cantidad": 20, "precio": 1.00, "marca": "Maped"},
+    {"id": 6, "nombre": "Colores",   "cantidad": 20, "precio": 3.40, "marca": "Crayola"},
+    {"id": 7, "nombre": "Regla",   "cantidad": 20, "precio": 1.60, "marca": "Staedler"},
+    {"id": 8, "nombre": "Pegante",   "cantidad": 20,"precio": 2.50, "marca": "Colbón"}
 ]
-siguiente_id = 4
+siguiente_id = 9
 
 
 # ── READ ──────────────────────────────────
@@ -34,7 +34,7 @@ def agregar():
         "nombre":   request.form["nombre"],
         "cantidad": int(request.form["cantidad"]),
         "precio":   float(request.form["precio"]),
-        "Marca":    request.form["Marca"]  #Nueva Linea de Codigo: Jesus David Jimenez Martinez 08/04/2026
+        "marca":    request.form["marca"],  #Nueva Linea de Codigo: Jesus David Jimenez Martinez 08/04/2026
     })
     siguiente_id += 1
     return redirect(url_for("index"))
